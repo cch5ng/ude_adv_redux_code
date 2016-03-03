@@ -26,7 +26,7 @@ describe('CommentBox', () => {
     });
 
     it('shows that text in the textarea', () => {
-
+      expect(component.find('textarea')).to.have.value('new comment');
     });
 
     it('when submitted, clears the input', () => {
