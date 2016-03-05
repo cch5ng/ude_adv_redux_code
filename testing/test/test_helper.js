@@ -30,4 +30,5 @@ function renderComponent(ComponentClass, props, state) {
 
 // Set up chai-jquery
 
+
 export { renderComponent, expect };
