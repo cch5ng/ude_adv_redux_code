@@ -25,7 +25,10 @@ function renderComponent(ComponentClass, props, state) {
 }
 
 // Build helper for simulating events
+$.fn.simulate = function(eventName, value) {
 
+  TestUtils.Simulate[eventName](this[0]);
+}
 
 
 // Set up chai-jquery
