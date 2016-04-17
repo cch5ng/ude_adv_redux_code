@@ -2,6 +2,7 @@ import axios from 'axios';
 import { browserHistory } from 'react-router';
 import {
   AUTH_USER,
+  UNAUTH_USER,
   AUTH_ERROR
 } from './types';
 
@@ -33,4 +34,10 @@ export function authError(error) {
     type: AUTH_ERROR,
     payload: error
   };
+}
+
+export function signoutUser() {
+  localStorage.removeItem('token');
+
+  return { type: UNAUTH_USER };
 }
