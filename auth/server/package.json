@@ -12,6 +12,7 @@
   "dependencies": {
     "bcrypt-nodejs": "*",
     "body-parser": "*",
+    "cors": "^2.8.4",
     "express": "*",
     "jwt-simple": "*",
     "mongoose": "*",
