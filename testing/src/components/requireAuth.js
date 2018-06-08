@@ -23,7 +23,7 @@ export default ChildComponent => {
     }
 
     render() {
-      return <ChildComponent />;
+      return <ChildComponent {...this.props} />;
     }
   }
 
