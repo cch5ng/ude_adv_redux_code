@@ -1,13 +1,18 @@
 const Authentication = require('./controllers/authentication');
+const passportService = require('./services/passport');
+const passport = require('passport');
+
+// middleware, using jwt not cookies
+const requireAuth = passport.authenticate('jwt', { session: false });
 
 // export a function that has access to express app
 module.exports = function(app) {
-  app.post('/signup', Authentication.signup);
-
-
-  // handler for get requests made to express app
-  // app.get('/', function(req, res, next) {
-  //   res.send(['bottle', 'phone', 'paper']);
+  // test
+  // app.get('/', requireAuth, function(req, res) {
+  //   res.send({ hi: 'there' })
   // });
+
+
+  app.post('/signup', Authentication.signup);
 
 }
