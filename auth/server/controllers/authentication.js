@@ -7,6 +7,13 @@ function tokenForUser(user) {
   return jwt.encode({ sub: user.id, iat: timestamp }, config.secret);
 }
 
+exports.signin = function(req, res, next) {
+  // user email/pwd already authenticated
+  // need pass back token
+  // passport passes cur user as req.user
+  res.send({ token: tokenForUser(req.user) });
+}
+
 exports.signup = function(req, res, next) {
   // check if user exists (email/pwd)
   // req.body
