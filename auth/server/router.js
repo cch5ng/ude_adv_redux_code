@@ -4,6 +4,7 @@ const passport = require('passport');
 
 // middleware, using jwt not cookies
 const requireAuth = passport.authenticate('jwt', { session: false });
+const requireSignin = passport.authenticate('local', { session: false });
 
 // export a function that has access to express app
 module.exports = function(app) {
@@ -14,5 +15,6 @@ module.exports = function(app) {
 
 
   app.post('/signup', Authentication.signup);
+  app.post('/signin', requireSignin, Authentication.signin);
 
 }
